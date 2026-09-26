@@ -2,17 +2,23 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Objects
+  - Obstacle
+  - Bounds
+  - Hole
+  - Coin
+  - Gate
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Spawn
   - Water
   - UI
-  - 
-  - 
+  - Hole
+  - Obstacles
   - 
   - 
   - 
@@ -41,3 +47,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Object
+    uniqueID: 2879937451
+    locked: 0
+  - name: UI
+    uniqueID: 1770152617
+    locked: 0
+  m_RenderingLayers:
+  - Default

@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: a06c7cc146e3e454fa5b9753f1cfbfc0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1202041431486622779
+    second: Play Ripple Studio Icon tranparent_0
+  - first:
+      213: -2728458969950223375
+    second: Play Ripple Studio Icon tranparent_1
+  - first:
+      213: -3739451847575247913
+    second: Play Ripple Studio Icon tranparent_2
+  - first:
+      213: -4934378810813895283
+    second: Play Ripple Studio Icon tranparent_3
+  - first:
+      213: 835435444313841376
+    second: Play Ripple Studio Icon tranparent_4
+  - first:
+      213: 6228444986260199054
+    second: Play Ripple Studio Icon tranparent_5
+  - first:
+      213: 1028490547288517970
+    second: Play Ripple Studio Icon tranparent_6
+  - first:
+      213: 2680493063391278429
+    second: Play Ripple Studio Icon tranparent_7
+  - first:
+      213: -4409550071338272967
+    second: Play Ripple Studio Icon tranparent_8
+  - first:
+      213: -777565155606114472
+    second: Play Ripple Studio Icon tranparent_9
+  - first:
+      213: -476016570040232670
+    second: Play Ripple Studio Icon tranparent_10
+  - first:
+      213: -7481679453077151345
+    second: Play Ripple Studio Icon tranparent_11
+  - first:
+      213: -7234536251750343777
+    second: Play Ripple Studio Icon tranparent_12
+  - first:
+      213: -6327325156210172438
+    second: Play Ripple Studio Icon tranparent_13
+  - first:
+      213: -4436439805713380101
+    second: Play Ripple Studio Icon tranparent_14
+  - first:
+      213: -4225716279268009736
+    second: Play Ripple Studio Icon tranparent_15
+  - first:
+      213: 2418987220149267860
+    second: Play Ripple Studio Icon tranparent_16
+  - first:
+      213: 7636686680320363792
+    second: Play Ripple Studio Icon tranparent_17
+  - first:
+      213: -867084959382872244
+    second: Play Ripple Studio Icon tranparent_18
+  - first:
+      213: 4489311121387188731
+    second: Play Ripple Studio Icon tranparent_19
+  - first:
+      213: 2539003832348229691
+    second: Play Ripple Studio Icon tranparent_20
+  - first:
+      213: 5427736071041214476
+    second: Play Ripple Studio Icon tranparent_21
+  - first:
+      213: -8041991030563063140
+    second: Play Ripple Studio Icon tranparent_22
+  - first:
+      213: -8146831415059599249
+    second: Play Ripple Studio Icon tranparent_23
+  - first:
+      213: -7187522207660008570
+    second: Play Ripple Studio Icon tranparent_24
+  - first:
+      213: -6492684392346179798
+    second: Play Ripple Studio Icon tranparent_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_0
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 492
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c310fecfad715fe0800000000000000
+      internalID: -1202041431486622779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_1
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 506
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f383e7d501922ad0800000000000000
+      internalID: -2728458969950223375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_2
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 443
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d3699a6b5cca1cc0800000000000000
+      internalID: -3739451847575247913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_3
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 496
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d29327d90958bb0800000000000000
+      internalID: -4934378810813895283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_4
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 509
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eed81b3c10189b00800000000000000
+      internalID: 835435444313841376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_5
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 354
+        width: 267
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e861a1d17b1ef6650800000000000000
+      internalID: 6228444986260199054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_6
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 481
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25daafd14bee54e00800000000000000
+      internalID: 1028490547288517970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_7
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 478
+        width: 26
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d55f5524d36033520800000000000000
+      internalID: 2680493063391278429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_8
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 461
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 937759aa2912ec2c0800000000000000
+      internalID: -4409550071338272967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_9
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 265
+        width: 632
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f40665c988535f0800000000000000
+      internalID: -777565155606114472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_10
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 161
+        width: 229
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2255d8b9379d469f0800000000000000
+      internalID: -476016570040232670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_11
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 176
+        width: 76
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f816ff35d2cbb2890800000000000000
+      internalID: -7481679453077151345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_12
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 187
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b1cb7fb93c99b90800000000000000
+      internalID: -7234536251750343777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_13
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 234
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aed13b54b43d038a0800000000000000
+      internalID: -6327325156210172438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_14
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 176
+        width: 71
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc0d0180899e62c0800000000000000
+      internalID: -4436439805713380101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_15
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 176
+        width: 71
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f815acce6d3b55c0800000000000000
+      internalID: -4225716279268009736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_16
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 187
+        width: 34
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49de4357f08f19120800000000000000
+      internalID: 2418987220149267860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_17
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 186
+        width: 63
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01dc3792316faf960800000000000000
+      internalID: 7636686680320363792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_18
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 133
+        width: 130
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4f56edc2de77f3f0800000000000000
+      internalID: -867084959382872244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_19
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 127
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf17e74fdac3d4e30800000000000000
+      internalID: 4489311121387188731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_20
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 127
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b30c876888a5c3320800000000000000
+      internalID: 2539003832348229691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_21
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 127
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c086cf00331335b40800000000000000
+      internalID: 5427736071041214476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_22
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 127
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a396814cb156090800000000000000
+      internalID: -8041991030563063140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_23
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 127
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f603164edf3a0fe80800000000000000
+      internalID: -8146831415059599249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_24
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 127
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b913d12aac04c90800000000000000
+      internalID: -7187522207660008570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Play Ripple Studio Icon tranparent_25
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 135
+        width: 134
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a27ab73e1f955e5a0800000000000000
+      internalID: -6492684392346179798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Play Ripple Studio Icon tranparent_0: -1202041431486622779
+      Play Ripple Studio Icon tranparent_1: -2728458969950223375
+      Play Ripple Studio Icon tranparent_10: -476016570040232670
+      Play Ripple Studio Icon tranparent_11: -7481679453077151345
+      Play Ripple Studio Icon tranparent_12: -7234536251750343777
+      Play Ripple Studio Icon tranparent_13: -6327325156210172438
+      Play Ripple Studio Icon tranparent_14: -4436439805713380101
+      Play Ripple Studio Icon tranparent_15: -4225716279268009736
+      Play Ripple Studio Icon tranparent_16: 2418987220149267860
+      Play Ripple Studio Icon tranparent_17: 7636686680320363792
+      Play Ripple Studio Icon tranparent_18: -867084959382872244
+      Play Ripple Studio Icon tranparent_19: 4489311121387188731
+      Play Ripple Studio Icon tranparent_2: -3739451847575247913
+      Play Ripple Studio Icon tranparent_20: 2539003832348229691
+      Play Ripple Studio Icon tranparent_21: 5427736071041214476
+      Play Ripple Studio Icon tranparent_22: -8041991030563063140
+      Play Ripple Studio Icon tranparent_23: -8146831415059599249
+      Play Ripple Studio Icon tranparent_24: -7187522207660008570
+      Play Ripple Studio Icon tranparent_25: -6492684392346179798
+      Play Ripple Studio Icon tranparent_3: -4934378810813895283
+      Play Ripple Studio Icon tranparent_4: 835435444313841376
+      Play Ripple Studio Icon tranparent_5: 6228444986260199054
+      Play Ripple Studio Icon tranparent_6: 1028490547288517970
+      Play Ripple Studio Icon tranparent_7: 2680493063391278429
+      Play Ripple Studio Icon tranparent_8: -4409550071338272967
+      Play Ripple Studio Icon tranparent_9: -777565155606114472
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
