@@ -14,15 +14,17 @@ public class Spawner : MonoBehaviour
     [SerializeField] private AudioSource[] audioSfx;
 
     [Header("Spawn Settings")]
-    private float spawnDiff = 2f;
+    private float shapeSpawnDiff = 2f;
+    private float starSpawnDiff = 1.5f;
 
     [Header("Collision")]
     public LayerMask obstacleLayer;
+    public LayerMask obstacleLayerMod;
 
     private ShapeData shapeData;
     private FloorDataRef floorSpawnRef;
     private List<Vector2> currentSpawnPoints = new List<Vector2>();
-    private List<Vector2> spawnPoints = new List<Vector2>();
+    private List<Vector2> starSpawnPoints = new List<Vector2>();
     private Vector2 yInstaPos = Vector2.zero;
     private int currentCoinSpawn = 0;
     private int maxCoinSpawn = 0;
@@ -79,7 +81,6 @@ public class Spawner : MonoBehaviour
                 shapesRef.Add(spawnmove);
                 spawnmove.SetUp(shapecode, maxpoint, shape.colorGradient, this);
                 spawnmove.transform.position = spawnPosition;
-
                 currentSpawnPoints.RemoveAt(rand);
             }
         }
@@ -90,39 +91,50 @@ public class Spawner : MonoBehaviour
         {
             isTutorial = true;
         }
-
-        currentSpawnPoints = spawnPoints;
-        print(currentSpawnPoints.Count);
         StartCoroutine(SpawnRoutine());
 
     }
 
     private void SpawnObject()
     {
-        spawnPoints.Clear();
+        starSpawnPoints.Clear();
+        currentSpawnPoints.Clear();
         HasGameRunning = true;
-        for (float j = yInstaPos.y; j > yInstaPos.x; j -= spawnDiff)
+        for (float j = yInstaPos.y; j > yInstaPos.x; j -= shapeSpawnDiff)
         {
-            for (float k = -12; k < 13; k += spawnDiff)
+            for (float k = -12; k < 13; k += shapeSpawnDiff)
             {
                 Vector2 spawnPosition = new Vector2(k, j);
                 if (!HasObstacleHit(spawnPosition, 1))
                 {
-                    spawnPoints.Add(spawnPosition);
-                    spawnPoints.Add(spawnPosition);
-
+                    currentSpawnPoints.Add(spawnPosition);
+                }
+            }
+        }
+        for (float j = yInstaPos.y; j > yInstaPos.x; j -= starSpawnDiff)
+        {
+            for (float k = -12; k < 13; k += starSpawnDiff)
+            {
+                Vector2 spawnPosition = new Vector2(k, j);
+                if (!HasObstacleHit(spawnPosition, 1))
+                {
+                    starSpawnPoints.Add(spawnPosition);
                 }
             }
         }
 
-        for (int i = spawnPoints.Count - 1; i > 0; i--)
+        for (int i = currentSpawnPoints.Count - 1; i > 0; i--)
         {
             int randomIndex = Random.Range(0, i + 1);
-            Vector2 temp = spawnPoints[i];
-            spawnPoints[i] = spawnPoints[randomIndex];
-            spawnPoints[randomIndex] = temp;
+            Vector2 temp = currentSpawnPoints[i];
+            currentSpawnPoints[i] = currentSpawnPoints[randomIndex];
+            currentSpawnPoints[randomIndex] = temp;
         }
-        currentSpawnPoints = spawnPoints;
+        if (floorSpawnRef)
+        {
+            floorSpawnRef.DisableMaskObjects();
+        }
+        print(starSpawnPoints.Count);
         print(currentSpawnPoints.Count);
 
     }
@@ -173,11 +185,12 @@ public class Spawner : MonoBehaviour
                     if (max > 0)
                     {
                         max--;
-                        Collider2D hit = Physics2D.OverlapCircle( spawnPosition, 1, obstacleLayer);
+                        Collider2D hit = Physics2D.OverlapCircle( spawnPosition, 2, obstacleLayerMod);
                         if (hit == null)
                         {
                             Key key = Instantiate(keyObjPrefab, transform);
                             key.transform.position = spawnPosition;
+                            currentSpawnPoints.RemoveAt(rand);
                             key.SetUp(i, gateTypes[i], this);
                             break;
                         }
@@ -197,14 +210,14 @@ public class Spawner : MonoBehaviour
         {
             if(maxitter > 0)
             {
-                int rand = UnityEngine.Random.Range(0, currentSpawnPoints.Count);
-                Vector2 spawnPosition = currentSpawnPoints[rand];
+                int rand = UnityEngine.Random.Range(0, starSpawnPoints.Count);
+                Vector2 spawnPosition = starSpawnPoints[rand];
 
                 // Check if another object exists here
                 Collider2D hit = Physics2D.OverlapCircle(
                     spawnPosition,
                     1,
-                    obstacleLayer
+                    obstacleLayerMod
                 );
                 if (hit == null)
                 {
@@ -212,7 +225,7 @@ public class Spawner : MonoBehaviour
                     GameObject coin = Instantiate(coinPrefab, transform);
                     spawnedObjects.Add(coin.gameObject);
                     coin.transform.position = spawnPosition;
-                    currentSpawnPoints.RemoveAt(rand);
+                    starSpawnPoints.RemoveAt(rand);
                     currentCoinSpawn++;
 
                 }
@@ -250,14 +263,14 @@ public class Spawner : MonoBehaviour
     {
         if(currentCoinSpawn < maxCoinSpawn && HasGameRunning)
         {
-            int rand = UnityEngine.Random.Range(0, currentSpawnPoints.Count);
-            Vector2 spawnPosition = currentSpawnPoints[rand];
+            int rand = UnityEngine.Random.Range(0, starSpawnPoints.Count);
+            Vector2 spawnPosition = starSpawnPoints[rand];
 
             // Check if another object exists here
             Collider2D hit = Physics2D.OverlapCircle(
                 spawnPosition,
                 1,
-                obstacleLayer
+                obstacleLayerMod
             );
             if (hit == null)
             {
@@ -265,7 +278,7 @@ public class Spawner : MonoBehaviour
                 GameObject coin = Instantiate(coinPrefab, transform);
                 spawnedObjects.Add(coin.gameObject);
                 coin.transform.position = spawnPosition;
-                currentSpawnPoints.RemoveAt(rand);
+                starSpawnPoints.RemoveAt(rand);
                 currentCoinSpawn++;
 
             }

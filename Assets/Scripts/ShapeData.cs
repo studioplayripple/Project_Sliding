@@ -51,11 +51,14 @@ public class ShapeData : MonoBehaviour
     public static ShapeData Instance;
     public Shape[] allShapes;
     public Leveldata[] allLevelData;
+    public Sprite[] allBgSprites;
 
+    public static readonly string FirstPlayPref = "FirstPlayPref";
     public static readonly string TutorialCodePref = "TutorialCodePref";
     public static readonly string LevelNumberPref = "LevelNumberPref";
     public static readonly string CoinCountPref = "CoinCountPref";
     public static readonly string CameraSizePref = "CameraSizePref";
+    public static readonly string AbilityTutorialPref = "AbilityTutorialPref";
 
     public static readonly string RepositionAbilityPref = "RepositionAbilityPref";
     public static readonly string MovementAbilityPref = "MovementAbilityPref";

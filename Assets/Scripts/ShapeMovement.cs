@@ -1,14 +1,15 @@
 using System;
-using TMPro;
+using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class ShapeMovement : MonoBehaviour
 {
-    public SpriteRenderer spriteRenderer;
-    public Color disableColor;
-    public LineRenderer lineRenderer;
-    public LayerMask holeLayer;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Color disableColor;
+    [SerializeField] private LineRenderer lineRenderer;
+    [SerializeField] private LayerMask holeLayer;
+    [SerializeField] private Transform moveHIntTrans;
 
     public ShapeCode ThisShapeCode { get; private set; }
     private Vector3 prevPos;
@@ -18,13 +19,13 @@ public class ShapeMovement : MonoBehaviour
 
     private Vector3[] linePositions;
     private int moveIndex = 0;
-    private bool startMovement = false;
+    public bool startMovement{get; private set;}
     private float currentSpeed = 0;
     private Spawner spawner;
     private bool hasSelected = false;
 
     private AbilityManager abilityManager;
-    private int abilityCode = -1;
+    private List<int> abilityCodes = new List<int>();
     private bool isAbilityHit = false;
 
     public static Action ShapeSelectedEvent = delegate { };
@@ -32,6 +33,8 @@ public class ShapeMovement : MonoBehaviour
     public void SetUp(ShapeCode code, int maxpoint, Gradient colgrad, Spawner sp)
     {
         abilityManager = AbilityManager.Instance;
+        moveHIntTrans.gameObject.SetActive(false);
+
         minDistance = 1f;
         lineRenderer.colorGradient = colgrad;
         maxPoints = maxpoint;
@@ -50,6 +53,11 @@ public class ShapeMovement : MonoBehaviour
             ShapeSelectedEvent?.Invoke();
             StartLine(transform.position);
             linePositions = new Vector3[0];
+
+            if (abilityCodes.Contains(2))
+            {
+                moveHIntTrans.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -65,7 +73,7 @@ public class ShapeMovement : MonoBehaviour
         {
             currentSpeed = speed;
             bool status = HasHole();
-            if(status || abilityCode == 0)
+            if(status || abilityCodes.Contains(0))
             {
                 status = true;
             }
@@ -78,6 +86,9 @@ public class ShapeMovement : MonoBehaviour
             }
 
         }
+        moveHIntTrans.gameObject.SetActive(false);
+        moveHIntTrans.position = transform.position;
+
     }
 
     private bool HasHole()
@@ -105,7 +116,7 @@ public class ShapeMovement : MonoBehaviour
 
     private void Update()
     {
-        if (startMovement && spawner.HasGameRunning)
+        if (startMovement && spawner.HasGameRunning && linePositions.Length > 0)
         {
             Vector2 currentpos = linePositions[moveIndex];
             Vector2 newPos = Vector2.MoveTowards(transform.position, currentpos, currentSpeed * Time.deltaTime);
@@ -131,6 +142,7 @@ public class ShapeMovement : MonoBehaviour
         minDistance = 1f;
         startMovement = false;
         moveIndex = 0;
+        linePositions = new Vector3[0];
         prevPos = transform.position;
         lineRenderer.positionCount = 1;
         lineRenderer.SetPosition(0, position);
@@ -139,25 +151,33 @@ public class ShapeMovement : MonoBehaviour
 
     void UpdateLine()
     {
-        if (Input.GetMouseButton(0) && lineRenderer.positionCount < maxPoints && spawner.HasGameRunning && !isAbilityHit)
+        if (Input.GetMouseButton(0) && lineRenderer.positionCount < maxPoints && spawner.HasGameRunning)
         {
             Vector2 currentPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             if (Vector2.Distance(currentPos, prevPos) > minDistance)
             {
                 CheckForAbilityHint(currentPos);
-                minDistance = 0.2f;
-                lineRenderer.positionCount++;
-                lineRenderer.SetPosition(lineRenderer.positionCount - 1, currentPos);
-                prevPos = currentPos;
-                linePositions = new Vector3[lineRenderer.positionCount];
-                lineRenderer.GetPositions(linePositions);
+                if (!isAbilityHit) 
+                {
+                    minDistance = 0.2f;
+                    lineRenderer.positionCount++;
+                    lineRenderer.SetPosition(lineRenderer.positionCount - 1, currentPos);
+                    prevPos = currentPos;
+                    linePositions = new Vector3[lineRenderer.positionCount];
+                    lineRenderer.GetPositions(linePositions);
+                    if (abilityCodes.Contains(2))
+                    {
+                        moveHIntTrans.position = currentPos;
+                    }
+                }
             }
+            
         }
     }
 
     private void CheckForAbilityHint(Vector2 point)
     {
-        if (abilityCode == 1 && !isAbilityHit)
+        if (abilityCodes.Contains(1) && !isAbilityHit)
         {
             if(spawner.HasObstacleHit(point, 1.5f))
             {
@@ -204,8 +224,7 @@ public class ShapeMovement : MonoBehaviour
     }
     private void ResetEvent()
     {
-
-        if (abilityCode >= 0)
+        if (abilityCodes.Count > 0)
         {
             abilityManager.AbilityUsed(true);
         }
@@ -224,9 +243,17 @@ public class ShapeMovement : MonoBehaviour
         spriteRenderer.color = col;
     }
 
-    public void AbilityCodeSetup(int index)
+    public void AbilityCodeSetup(int index, bool status)
     {
-        abilityCode = index;
+        if (status && index >= 0)
+        {
+            if(!abilityCodes.Contains(index))
+                abilityCodes.Add(index);
+        }
+        else
+        {
+            abilityCodes.Clear();
+        }
     }
 
     private void OnDisable()

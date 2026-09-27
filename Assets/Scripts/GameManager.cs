@@ -23,25 +23,53 @@ public class GameManager : MonoBehaviour
     private int currentLife;
     void Start()
     {
-        PlayerPrefs.SetInt(ShapeData.LevelNumberPref,2);
-        //PlayerPrefs.SetInt(ShapeData.TutorialCodePref, 1);
 
-        levelNumber = PlayerPrefs.GetInt(ShapeData.LevelNumberPref, 0);
-        totalCoin = PlayerPrefs.GetInt(ShapeData.CoinCountPref, 0);
-        float camSize = PlayerPrefs.GetFloat(ShapeData.CameraSizePref, 0);
-        Camera.main.orthographicSize = camSize;
 
         shapeData = ShapeData.Instance;
         uiManager = UiManager.Instance;
         abilityManager = AbilityManager.Instance;
 
+        //PlayerPrefs.SetInt(ShapeData.LevelNumberPref, 17);
+        //PlayerPrefs.SetInt(ShapeData.CoinCountPref, 201);
+        //PlayerPrefs.SetInt(ShapeData.TutorialCodePref, 1);
+
+        float camSize = PlayerPrefs.GetFloat(ShapeData.CameraSizePref, 0);
+        Camera.main.orthographicSize = camSize;
+
         int ability1 = PlayerPrefs.GetInt(ShapeData.RepositionAbilityPref, 5);
         int ability2 = PlayerPrefs.GetInt(ShapeData.MovementAbilityPref, 4);
         int ability3 = PlayerPrefs.GetInt(ShapeData.MoveHintAbilityPref, 3);
-        List<int> list = new List<int>();
-        list.Add(ability1);
-        list.Add(ability2);
-        list.Add(ability3);
+
+        int firstPlay = PlayerPrefs.GetInt(ShapeData.FirstPlayPref, 0);
+        if(firstPlay == 0)
+        {
+            levelNumber = 0;
+            PlayerPrefs.SetInt(ShapeData.LevelNumberPref, levelNumber);
+            totalCoin = 50;
+            PlayerPrefs.SetInt(ShapeData.CoinCountPref, totalCoin);
+
+            ability1 = 5;
+            PlayerPrefs.SetInt(ShapeData.RepositionAbilityPref, ability1);
+
+            ability2 = 5;
+            PlayerPrefs.SetInt(ShapeData.MovementAbilityPref, ability2);
+
+            ability3 = 5;
+            PlayerPrefs.SetInt(ShapeData.MoveHintAbilityPref, ability3);
+
+            PlayerPrefs.SetInt(ShapeData.FirstPlayPref, 10);
+        }
+        else
+        {
+            totalCoin = PlayerPrefs.GetInt(ShapeData.CoinCountPref, 0);
+        }
+        List<int> list = new List<int>
+        {
+            ability1,
+            ability2,
+            ability3
+        };
+        levelNumber = PlayerPrefs.GetInt(ShapeData.LevelNumberPref, 0);
         abilityManager.SetUp(list, levelNumber, shapeSpawner);
 
         Leveldata leveldata = shapeData.allLevelData[levelNumber];
@@ -50,7 +78,9 @@ public class GameManager : MonoBehaviour
 
     private void LevelShapeCodes(Leveldata leveldata)
     {
-        uiManager.SetUp(this);
+        int rand = Random.Range(0, shapeData.allBgSprites.Length);
+        Sprite bgimage = shapeData.allBgSprites[rand];
+        uiManager.SetUp(this, levelNumber, bgimage);
         gameStatus = -1;
         int count = leveldata.TargetData.Length;
 

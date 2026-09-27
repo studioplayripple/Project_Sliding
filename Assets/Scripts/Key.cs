@@ -26,7 +26,8 @@ public class Key : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Objects"))
         {
-            if (spawnerObj)
+            ShapeMovement shape = collision.gameObject.GetComponent<ShapeMovement>();
+            if (spawnerObj && shape && shape.startMovement)
             {
                 spawnerObj.KeyCollected(gateIndex);
                 Destroy(gameObject);

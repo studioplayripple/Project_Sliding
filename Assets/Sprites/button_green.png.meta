@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 03dad1a7866cc9741a7126dcd649315d
+guid: 3d1f4ce2fa9310c459c939cf4851f3a5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4909802240253776241
-    second: ability buttons mod_0
-  - first:
-      213: 4899288554029398681
-    second: ability buttons mod_1
-  - first:
-      213: -4325192847361859332
-    second: ability buttons mod_2
+      213: 712923248015389449
+    second: button_green_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -132,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ability buttons mod_0
+      name: button_green_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 68
-        width: 529
-        height: 282
+        x: 0
+        y: 0
+        width: 1959
+        height: 672
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,52 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1715ebfcf1f132440800000000000000
-      internalID: 4909802240253776241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ability buttons mod_1
-      rect:
-        serializedVersion: 2
-        x: 544
-        y: 69
-        width: 506
-        height: 282
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 99a3f0b7bf4cdf340800000000000000
-      internalID: 4899288554029398681
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ability buttons mod_2
-      rect:
-        serializedVersion: 2
-        x: 1060
-        y: 68
-        width: 532
-        height: 286
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cf0afeb6504d9f3c0800000000000000
-      internalID: -4325192847361859332
+      spriteID: 9033316baefc4e900800000000000000
+      internalID: 712923248015389449
       vertices: []
       indices: 
       edges: []
@@ -211,9 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ability buttons mod_0: 4909802240253776241
-      ability buttons mod_1: 4899288554029398681
-      ability buttons mod_2: -4325192847361859332
+      button_green_0: 712923248015389449
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

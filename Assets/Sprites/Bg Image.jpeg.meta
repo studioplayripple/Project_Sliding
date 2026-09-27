@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 03dad1a7866cc9741a7126dcd649315d
+guid: 95765716aec3ad94bb2696f6e877cce4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4909802240253776241
-    second: ability buttons mod_0
-  - first:
-      213: 4899288554029398681
-    second: ability buttons mod_1
-  - first:
-      213: -4325192847361859332
-    second: ability buttons mod_2
+      213: 2930835725128623928
+    second: Bg Image_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -78,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -132,67 +126,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ability buttons mod_0
+      name: Bg Image_0
       rect:
         serializedVersion: 2
-        x: 5
-        y: 68
-        width: 529
-        height: 282
+        x: 0
+        y: 0
+        width: 505
+        height: 1024
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1715ebfcf1f132440800000000000000
-      internalID: 4909802240253776241
+      spriteID: 837e053509b6ca820800000000000000
+      internalID: 2930835725128623928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ability buttons mod_1
+      name: Bg Image_1
       rect:
         serializedVersion: 2
-        x: 544
-        y: 69
-        width: 506
-        height: 282
+        x: 515
+        y: 0
+        width: 505
+        height: 1024
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 99a3f0b7bf4cdf340800000000000000
-      internalID: 4899288554029398681
+      spriteID: 9561a3a1307e259488ea37f737dbdc53
+      internalID: 1312379005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ability buttons mod_2
+      name: Bg Image_2
       rect:
         serializedVersion: 2
-        x: 1060
-        y: 68
-        width: 532
-        height: 286
+        x: 1030
+        y: 0
+        width: 505
+        height: 1024
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cf0afeb6504d9f3c0800000000000000
-      internalID: -4325192847361859332
+      spriteID: 36b97f99740f40745a47369f12026b78
+      internalID: 937205120
       vertices: []
       indices: 
       edges: []
@@ -201,7 +195,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 287710e88ccdd264885f4a76aca2fef8
     internalID: 0
     vertices: []
     indices: 
@@ -209,11 +203,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":505.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":10.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      ability buttons mod_0: 4909802240253776241
-      ability buttons mod_1: 4899288554029398681
-      ability buttons mod_2: -4325192847361859332
+      Bg Image_0: 2930835725128623928
+      Bg Image_1: 1312379005
+      Bg Image_2: 937205120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

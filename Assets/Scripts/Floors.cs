@@ -5,7 +5,16 @@ public class Floors : MonoBehaviour
 {
     [SerializeField] private Gates[] allCurrentGates;
     [SerializeField] private GameObject[] ObstacleObjects;
+    [SerializeField] private GameObject[] maskObjects;
 
+
+    public void DisableMasks()
+    {
+        foreach (var obj in maskObjects)
+        {
+            obj.SetActive(false);
+        }
+    }
 
     public List<GateType> ActivegateTypes()
     {

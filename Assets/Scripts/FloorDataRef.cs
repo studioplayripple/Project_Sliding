@@ -8,10 +8,23 @@ public class FloorDataRef : MonoBehaviour
 {
 
     [SerializeField] private Floors[] obstacleObjects;
+    [SerializeField] private GameObject[] holeMaskObjects;
     [SerializeField] private Transform[] spawnYTrans;
     [SerializeField] private Transform[] tutorialTrans;
 
     private Floors currentSelectedFloor = null;
+
+
+    public void DisableMaskObjects()
+    {
+        foreach (var obj in holeMaskObjects)
+        {
+            obj.SetActive(false);
+        }
+        currentSelectedFloor.DisableMasks();
+    }
+
+
     public Vector2 SpawnYPosition(int obsIndex)
     {
         SetObstacleHolder(obsIndex);

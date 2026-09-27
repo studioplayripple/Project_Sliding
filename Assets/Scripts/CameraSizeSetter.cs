@@ -38,7 +38,7 @@ public class CameraSizeSetter : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             RaycastHit2D hit = Physics2D.CircleCast(
             pos1,
-            1.8f,
+            1.7f,
             transform.right,
             0,
             targetLayer

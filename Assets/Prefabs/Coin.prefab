@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 210177369685685662}
   - component: {fileID: 3569149093088929008}
-  - component: {fileID: 8317351458182328202}
+  - component: {fileID: -20606207049603575}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -92,7 +92,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!58 &8317351458182328202
+--- !u!58 &-20606207049603575
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

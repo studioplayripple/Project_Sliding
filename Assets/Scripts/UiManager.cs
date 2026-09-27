@@ -18,6 +18,9 @@ public class UiManager : MonoBehaviour
 {
     public static UiManager Instance;
 
+
+    [SerializeField] private Image bgImage;
+
     [SerializeField] private TweenPanel upperHolder;
     [SerializeField] private TweenPanel abilityHolder;
 
@@ -38,9 +41,11 @@ public class UiManager : MonoBehaviour
 
 
     [SerializeField] private Text targetText;
+    [SerializeField] private Text levelText;
     [SerializeField] private Image targetFill;
     [SerializeField] private Image[] hearts;
     [SerializeField] private Text starCount;
+    [SerializeField] private Button crossButton;
 
 
     [SerializeField] private AudioSource[] audioSfx;
@@ -59,9 +64,12 @@ public class UiManager : MonoBehaviour
     {
         gameOverButtons[0].onClick.AddListener(RetryLevel);
         gameOverButtons[1].onClick.AddListener(NextLevel);
+        crossButton.onClick.AddListener(ExitGame);
     }
-    public void SetUp(GameManager gmmanager)
+    public void SetUp(GameManager gmmanager, int levelnum, Sprite bgimage)
     {
+        bgImage.sprite = bgimage;
+        levelText.text = $"Level: {levelnum + 1}";
         gameManager = gmmanager;
         TweenPanelStatus(upperHolder, false, 0);
         TweenPanelStatus(abilityHolder, false, 0);
@@ -186,5 +194,8 @@ public class UiManager : MonoBehaviour
         gameManager.LoadScene();
     }
 
-    
+    private void ExitGame()
+    {
+        Application.Quit();
+    }
 }

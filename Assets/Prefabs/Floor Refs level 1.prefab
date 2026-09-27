@@ -52,6 +52,7 @@ MonoBehaviour:
   - {fileID: 7479055234249688465}
   - {fileID: 3085465499637760879}
   - {fileID: 1955105577835843796}
+  maskObjects: []
 --- !u!1 &1449427026534149622
 GameObject:
   m_ObjectHideFlags: 0
@@ -1408,6 +1409,7 @@ MonoBehaviour:
   - {fileID: 1981023785645854690}
   - {fileID: 2838799527061449359}
   - {fileID: 5624588059755764290}
+  maskObjects: []
 --- !u!1 &2279604783541869271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,6 +1774,7 @@ MonoBehaviour:
   - {fileID: 3731334059859369092}
   - {fileID: 1642820233459465681}
   - {fileID: 6336246886867307565}
+  maskObjects: []
 --- !u!1 &2624215629487784828
 GameObject:
   m_ObjectHideFlags: 0
@@ -2906,6 +2909,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Floors
   allCurrentGates: []
   ObstacleObjects: []
+  maskObjects:
+  - {fileID: 3128690971137736507}
+  - {fileID: 3282825495451537758}
 --- !u!1 &3415336138781421175
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,6 +2966,7 @@ MonoBehaviour:
   - {fileID: 2883099351115394484}
   - {fileID: 1950042068391372571}
   - {fileID: 2851613397614350920}
+  maskObjects: []
 --- !u!1 &3567931115107953106
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,6 +3127,7 @@ MonoBehaviour:
   - {fileID: 2824743095828103525}
   - {fileID: 2279604783541869271}
   - {fileID: 5137110412203215002}
+  maskObjects: []
 --- !u!1 &3731334059859369092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3329,6 +3337,11 @@ MonoBehaviour:
   allCurrentGates: []
   ObstacleObjects:
   - {fileID: 2624215629487784828}
+  maskObjects:
+  - {fileID: 8011953740330054333}
+  - {fileID: 8922309199758032115}
+  - {fileID: 7115302927057203112}
+  - {fileID: 6932950452970236138}
 --- !u!1 &3891327037188148841
 GameObject:
   m_ObjectHideFlags: 0
@@ -4187,6 +4200,7 @@ MonoBehaviour:
   - {fileID: 8832662388183129048}
   - {fileID: 3935367240423267611}
   - {fileID: 4681223744047020228}
+  maskObjects: []
 --- !u!1 &5113799234150905756
 GameObject:
   m_ObjectHideFlags: 0
@@ -4876,6 +4890,7 @@ MonoBehaviour:
   - {fileID: 7221980577024528613}
   - {fileID: 6829784218157788485}
   - {fileID: 4179873403664234185}
+  maskObjects: []
 --- !u!1 &5624588059755764290
 GameObject:
   m_ObjectHideFlags: 0
@@ -5081,6 +5096,7 @@ MonoBehaviour:
   ObstacleObjects:
   - {fileID: 8973611133125403956}
   - {fileID: 1925687120503200285}
+  maskObjects: []
 --- !u!1 &5908938713615017775
 GameObject:
   m_ObjectHideFlags: 0
@@ -5295,6 +5311,8 @@ MonoBehaviour:
   - {fileID: 7597876618206501797}
   - {fileID: 4430959447749218484}
   - {fileID: 4418495754190350733}
+  holeMaskObjects:
+  - {fileID: 4046134897096803733}
   spawnYTrans:
   - {fileID: 9164246927639980975}
   - {fileID: 3621306066701945882}
@@ -5952,6 +5970,7 @@ MonoBehaviour:
   ObstacleObjects:
   - {fileID: 7148155456914223717}
   - {fileID: 5113799234150905756}
+  maskObjects: []
 --- !u!1 &7055593891266551924
 GameObject:
   m_ObjectHideFlags: 0
@@ -6888,6 +6907,7 @@ MonoBehaviour:
   ObstacleObjects:
   - {fileID: 5165101346442270139}
   - {fileID: 2461834581058379076}
+  maskObjects: []
 --- !u!1 &8011953740330054333
 GameObject:
   m_ObjectHideFlags: 0
@@ -7175,6 +7195,7 @@ MonoBehaviour:
   - {fileID: 7759133504531071100}
   - {fileID: 3891327037188148841}
   - {fileID: 4718559113758063890}
+  maskObjects: []
 --- !u!1 &8319185450572243209
 GameObject:
   m_ObjectHideFlags: 0
@@ -7742,6 +7763,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9a43f631e3da5e46814807fb5bb8b4a, type: 3}
+--- !u!1 &4046134897096803733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8440488083020838713, guid: e9a43f631e3da5e46814807fb5bb8b4a, type: 3}
+  m_PrefabInstance: {fileID: 5549667780826739372}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4802068218192219848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1125969087576538212, guid: e9a43f631e3da5e46814807fb5bb8b4a, type: 3}
