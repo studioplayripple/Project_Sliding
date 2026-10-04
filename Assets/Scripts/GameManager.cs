@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         uiManager = UiManager.Instance;
         abilityManager = AbilityManager.Instance;
 
-        //PlayerPrefs.SetInt(ShapeData.LevelNumberPref, 17);
+        PlayerPrefs.SetInt(ShapeData.LevelNumberPref, 15);
         //PlayerPrefs.SetInt(ShapeData.CoinCountPref, 201);
         //PlayerPrefs.SetInt(ShapeData.TutorialCodePref, 1);
 

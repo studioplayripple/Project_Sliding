@@ -3873,6 +3873,14 @@ MonoBehaviour:
     maxPoints: 50
     obstacleIndex: 4
     ObstacleLevel: 1
+  - TargetData:
+    - goalShapeCode: 1
+      totalCount: 28
+    maxShapeCount: 28
+    maxCoinSpawn: 40
+    maxPoints: 35
+    obstacleIndex: 4
+    ObstacleLevel: 1
   allBgSprites:
   - {fileID: 2930835725128623928, guid: 95765716aec3ad94bb2696f6e877cce4, type: 3}
   - {fileID: 1312379005, guid: 95765716aec3ad94bb2696f6e877cce4, type: 3}
