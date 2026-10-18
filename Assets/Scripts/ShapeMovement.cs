@@ -1,15 +1,19 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Unity.VisualScripting;
 using UnityEngine;
+using static FaceExpressionManager;
 
 public class ShapeMovement : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Transform spriteRendererShadow;
     [SerializeField] private Color disableColor;
     [SerializeField] private LineRenderer lineRenderer;
     [SerializeField] private LayerMask holeLayer;
     [SerializeField] private Transform moveHIntTrans;
+    [SerializeField] private FaceExpressionManager faceExpressionManager;
 
     public ShapeCode ThisShapeCode { get; private set; }
     private Vector3 prevPos;
@@ -28,7 +32,22 @@ public class ShapeMovement : MonoBehaviour
     private List<int> abilityCodes = new List<int>();
     private bool isAbilityHit = false;
 
+    [Header("Nearby Character Detection")]
+    private float nearbyRadius = 4f;
+    private int[] irritatedCount = new int[3] {1, 3, 6 };
+    [SerializeField] private LayerMask characterLayer;
+
+    [Header("Obstacle Detection")]
+    private float[] obstacleDistance = new float[2] {1.5f, 2.5f};
+    [SerializeField] private LayerMask obstacleLayer;
+    private bool isDizzy;
+    private float dizzyTimer;
+
     public static Action ShapeSelectedEvent = delegate { };
+    private void Start()
+    {
+        spriteRendererShadow.position = transform.position + Vector3.down * 0.2f;
+    }
 
     public void SetUp(ShapeCode code, int maxpoint, Gradient colgrad, Spawner sp)
     {
@@ -132,6 +151,74 @@ public class ShapeMovement : MonoBehaviour
                 }
             }
         }
+        if (faceExpressionManager == null)
+            return;
+
+        // Dizzy has the highest priority.
+        if (isDizzy)
+        {
+            faceExpressionManager.SetFace(FaceState.Dizzy);
+
+            dizzyTimer -= Time.deltaTime;
+
+            if (dizzyTimer <= 0)
+            {
+                isDizzy = false;
+            }
+
+            return;
+        }
+
+        // Happy has priority when selected.
+        if (hasSelected)
+        {
+            faceExpressionManager.SetFace(FaceState.Happy);
+            return;
+        }
+
+        // Check obstacle while moving.
+        if (startMovement)
+        {
+            int num = -1;
+            if (IsObstacleClose(obstacleDistance[0]))
+            {
+                num = 2;
+            }else if (IsObstacleClose(obstacleDistance[1]))
+            {
+                num = 1;
+            }
+            faceExpressionManager.SetFace(FaceState.Shocked, num);
+            return;
+        }
+
+        // Check nearby characters.
+        int nearbyCharacters = GetNearbyCharacterCount(characterLayer);
+        int nearbyObstacle = GetNearbyCharacterCount(obstacleLayer);
+
+        if (nearbyCharacters >= irritatedCount[2])
+        {
+            faceExpressionManager.SetFace(FaceState.Annoyed, 2);
+        }
+        else if (nearbyCharacters >= irritatedCount[1])
+        {
+            faceExpressionManager.SetFace(FaceState.Annoyed, 1);
+        }
+        else
+        {
+            if (nearbyObstacle >= 2)
+            {
+                faceExpressionManager.SetFace(FaceState.Irritated);
+            }
+            else if (nearbyCharacters >= irritatedCount[0])
+            {
+                faceExpressionManager.SetFace(FaceState.Annoyed, 0);
+            }
+            else
+            {
+                faceExpressionManager.SetFace(FaceState.Idle);
+            }
+        }
+        
     }
 
 
@@ -192,6 +279,8 @@ public class ShapeMovement : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Objects") || collision.gameObject.CompareTag("Obstacle") || collision.gameObject.CompareTag("Gate"))
             {
+                dizzyTimer = 2f;
+                isDizzy = true;
                 ResetEvent();
                 StartLine(transform.position);
                 if (spawner)
@@ -236,10 +325,14 @@ public class ShapeMovement : MonoBehaviour
     private void ChangeColor()
     {
         Color col = Color.white;
+        bool status = true;
         if (spawner.CurrentSelectedShape && !hasSelected)
         {
             col = disableColor;
+            status = false;
         }
+        if (faceExpressionManager != null)
+            faceExpressionManager.gameObject.SetActive(status);
         spriteRenderer.color = col;
     }
 
@@ -255,6 +348,54 @@ public class ShapeMovement : MonoBehaviour
             abilityCodes.Clear();
         }
     }
+
+    // --------------------------------------------------
+    // NEARBY CHARACTERS
+    // --------------------------------------------------
+
+    private int GetNearbyCharacterCount(LayerMask characterlayer)
+    {
+        Collider2D[] characters = Physics2D.OverlapCircleAll(
+            transform.position,
+            nearbyRadius,
+            characterlayer
+        );
+
+        int count = 0;
+
+        foreach (Collider2D character in characters)
+        {
+            if (character.gameObject != gameObject)
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    // --------------------------------------------------
+    // OBSTACLE DETECTION
+    // --------------------------------------------------
+
+    private bool IsObstacleClose(float distance)
+    {
+        Vector2 direction = transform.up;
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            transform.position,
+            direction,
+            distance,
+            obstacleLayer
+        );
+
+        return hit.collider != null;
+    }
+
+
+
+
+
 
     private void OnDisable()
     {

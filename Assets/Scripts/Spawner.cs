@@ -77,10 +77,13 @@ public class Spawner : MonoBehaviour
 
                 Shape shape = SpawnPrefab(shapecode);
                 ShapeMovement spawnmove = Instantiate(shape.shapePrefab, transform);
+                float rotation = Random.Range(-40, 40);
+                Quaternion rot = Quaternion.Euler(0, 0, rotation);
+                spawnmove.transform.position = spawnPosition;
+                spawnmove.transform.rotation = rot;
+                spawnmove.SetUp(shapecode, maxpoint, shape.colorGradient, this);
                 spawnedObjects.Add(spawnmove.gameObject);
                 shapesRef.Add(spawnmove);
-                spawnmove.SetUp(shapecode, maxpoint, shape.colorGradient, this);
-                spawnmove.transform.position = spawnPosition;
                 currentSpawnPoints.RemoveAt(rand);
             }
         }
@@ -134,8 +137,8 @@ public class Spawner : MonoBehaviour
         {
             floorSpawnRef.DisableMaskObjects();
         }
-        print(starSpawnPoints.Count);
-        print(currentSpawnPoints.Count);
+        //print(starSpawnPoints.Count);
+        //print(currentSpawnPoints.Count);
 
     }
     public bool HasObstacleHit(Vector2 spawnPosition, float rad)
@@ -225,7 +228,6 @@ public class Spawner : MonoBehaviour
                     GameObject coin = Instantiate(coinPrefab, transform);
                     spawnedObjects.Add(coin.gameObject);
                     coin.transform.position = spawnPosition;
-                    starSpawnPoints.RemoveAt(rand);
                     currentCoinSpawn++;
 
                 }
@@ -278,7 +280,6 @@ public class Spawner : MonoBehaviour
                 GameObject coin = Instantiate(coinPrefab, transform);
                 spawnedObjects.Add(coin.gameObject);
                 coin.transform.position = spawnPosition;
-                starSpawnPoints.RemoveAt(rand);
                 currentCoinSpawn++;
 
             }

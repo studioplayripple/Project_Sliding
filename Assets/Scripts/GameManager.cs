@@ -29,9 +29,9 @@ public class GameManager : MonoBehaviour
         uiManager = UiManager.Instance;
         abilityManager = AbilityManager.Instance;
 
-        PlayerPrefs.SetInt(ShapeData.LevelNumberPref, 15);
+        //PlayerPrefs.SetInt(ShapeData.LevelNumberPref, 4);
         //PlayerPrefs.SetInt(ShapeData.CoinCountPref, 201);
-        //PlayerPrefs.SetInt(ShapeData.TutorialCodePref, 1);
+        //PlayerPrefs.SetInt(ShapeData.TutorialCodePref, 5);
 
         float camSize = PlayerPrefs.GetFloat(ShapeData.CameraSizePref, 0);
         Camera.main.orthographicSize = camSize;
