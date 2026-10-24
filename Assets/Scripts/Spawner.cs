@@ -229,6 +229,7 @@ public class Spawner : MonoBehaviour
                     spawnedObjects.Add(coin.gameObject);
                     coin.transform.position = spawnPosition;
                     currentCoinSpawn++;
+                    print("355t245245425");
 
                 }
                 else
@@ -247,7 +248,6 @@ public class Spawner : MonoBehaviour
 
     private void TutorialStart()
     {
-        InvokeRepeating(nameof(CoinSpawner), 0.3f, 3f);
         if (isTutorial)
         {
             if(tutorialCode == 1)
@@ -261,33 +261,38 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    private void CoinSpawner()
+    private void CoinRepeatSpawner()
     {
-        if(currentCoinSpawn < maxCoinSpawn && HasGameRunning)
+        for (int i = 0; i < starSpawnPoints.Count; i++)
         {
-            int rand = UnityEngine.Random.Range(0, starSpawnPoints.Count);
-            Vector2 spawnPosition = starSpawnPoints[rand];
-
-            // Check if another object exists here
-            Collider2D hit = Physics2D.OverlapCircle(
-                spawnPosition,
-                1,
-                obstacleLayerMod
-            );
-            if (hit == null)
+            if (currentCoinSpawn < maxCoinSpawn)
             {
-                // Spawn object
-                GameObject coin = Instantiate(coinPrefab, transform);
-                spawnedObjects.Add(coin.gameObject);
-                coin.transform.position = spawnPosition;
-                currentCoinSpawn++;
+                Vector2 spawnPosition = starSpawnPoints[i];
 
+                // Check if another object exists here
+                Collider2D hit = Physics2D.OverlapCircle(
+                    spawnPosition,
+                    1,
+                    obstacleLayerMod
+                );
+                if (hit == null)
+                {
+                    // Spawn object
+                    GameObject coin = Instantiate(coinPrefab, transform);
+                    spawnedObjects.Add(coin.gameObject);
+                    coin.transform.position = spawnPosition;
+                    currentCoinSpawn++;
+                    print("rurturtun");
+
+
+                }
+            }
+            else
+            {
+                break;
             }
         }
-        else
-        {
-            CancelInvoke(nameof(CoinSpawner));
-        }
+        
     }
 
 
@@ -295,15 +300,17 @@ public class Spawner : MonoBehaviour
 
     public void GameOver()
     {
-        foreach (var obj in spawnedObjects) 
-        { 
-            if(obj != null)
+        foreach (var item in shapesRef)
+        {
+            if (item)
             {
-                Destroy(obj);
+                item.gameObject.SetActive(false);
             }
         }
-        spawnedObjects.Clear();
-        shapesRef.Clear();
+        if (floorSpawnRef)
+        {
+            floorSpawnRef.gameObject.SetActive(false);
+        }
     }
 
 
@@ -311,6 +318,7 @@ public class Spawner : MonoBehaviour
 
     public void UpdateGoalCount(ShapeCode code)
     {
+        CoinRepeatSpawner();
         gameManager.UpdateGoal(code);
         audioSfx[1].Play();
         if (isTutorial)
@@ -419,6 +427,31 @@ public class Spawner : MonoBehaviour
         floorSpawnRef.DisableGate(index, false);
     }
 
+
+
+    public void RestartLevel()
+    {
+        HasGameRunning = true;
+        CurrentSelectedShape = null;
+        foreach (var item in shapesRef)
+        {
+            if (item)
+            {
+                item.gameObject.SetActive(true);
+                item.RestartShape();
+            }
+        }
+
+        if (floorSpawnRef)
+        {
+            floorSpawnRef.gameObject.SetActive(true);
+        }
+    }
+
+
+
+
+
     //private void OnDrawGizmos()
     //{
     //    Gizmos.color = Color.red;
@@ -461,4 +494,5 @@ public class Spawner : MonoBehaviour
     //        previousPoint = currentPoint;
     //    }
     //}
+
 }

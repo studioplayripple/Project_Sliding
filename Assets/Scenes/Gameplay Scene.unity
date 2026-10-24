@@ -1086,7 +1086,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   shapeSpawner: {fileID: 736637830}
-  levelNumber: 18
 --- !u!4 &333611377
 Transform:
   m_ObjectHideFlags: 0
@@ -1119,7 +1118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &364661172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2578,7 +2577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &804744102
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3372,7 +3371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &971601548
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3879,6 +3878,22 @@ MonoBehaviour:
       totalCount: 28
     maxShapeCount: 28
     maxCoinSpawn: 40
+    maxPoints: 35
+    obstacleIndex: 4
+    ObstacleLevel: 1
+  - TargetData:
+    - goalShapeCode: 1
+      totalCount: 33
+    maxShapeCount: 33
+    maxCoinSpawn: 45
+    maxPoints: 35
+    obstacleIndex: 4
+    ObstacleLevel: 1
+  - TargetData:
+    - goalShapeCode: 1
+      totalCount: 31
+    maxShapeCount: 31
+    maxCoinSpawn: 50
     maxPoints: 35
     obstacleIndex: 4
     ObstacleLevel: 1

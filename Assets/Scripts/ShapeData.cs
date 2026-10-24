@@ -78,26 +78,41 @@ public class ShapeData : MonoBehaviour
 
     public List<ShapeCode> AnyShapeCodes(int totalCount)
     {
+        int count = allShapes.Length;
+        int[] shapeCount = new int[count];
+        int max = totalCount / 3;
+
+
         List<ShapeCode> shapeCodes = new List<ShapeCode>();
         int currentcount = 0;
         while (currentcount < totalCount)
         {
-            int maxRange = Enum.GetValues(typeof(ShapeCode)).Length;
-            int random = UnityEngine.Random.Range(2, maxRange);
-            ShapeCode shapecode = (ShapeCode)random;
+            int random = UnityEngine.Random.Range(0, count);
+            ShapeCode shapecode = allShapes[random].shapeCode;
             if (totalCount < 6)
             {
                 for (int i = 0; i < 50; i++)
                 {
                     if(shapeCodes.Contains(shapecode))
                     {
-                        random = UnityEngine.Random.Range(2, maxRange);
-                        shapecode = (ShapeCode)random;
+                        random = UnityEngine.Random.Range(0, count);
+                        shapecode = allShapes[random].shapeCode;
                     }
                     else
                     {
                         break;
                     }
+                }
+            }
+            else
+            {
+                if(shapeCount.Length > random && shapeCount[random] >= max)
+                {
+                    continue;
+                }
+                else
+                {
+                    shapeCount[random]++;
                 }
             }
             shapeCodes.Add(shapecode);

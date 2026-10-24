@@ -16,6 +16,7 @@ public class ShapeMovement : MonoBehaviour
     [SerializeField] private FaceExpressionManager faceExpressionManager;
 
     public ShapeCode ThisShapeCode { get; private set; }
+    private Vector2 startPos;
     private Vector3 prevPos;
     private float minDistance = 1f;
     private float speed = 15f;
@@ -48,6 +49,19 @@ public class ShapeMovement : MonoBehaviour
     {
         spriteRendererShadow.position = transform.position + Vector3.down * 0.2f;
     }
+    public void RestartShape()
+    {
+        moveIndex = 0;
+        currentSpeed = 0;
+        startMovement = false;
+        isDizzy = false;
+        isAbilityHit = false;
+        transform.position = startPos;
+        hasSelected = false;
+        minDistance = 1f;
+        abilityCodes.Clear();
+        linePositions = new Vector3[0];
+    }
 
     public void SetUp(ShapeCode code, int maxpoint, Gradient colgrad, Spawner sp)
     {
@@ -60,6 +74,7 @@ public class ShapeMovement : MonoBehaviour
         ThisShapeCode = code;
         ShapeSelectedEvent += ChangeColor;
         prevPos = transform.position;
+        startPos = prevPos;
         spawner = sp;
     }
     private void OnMouseDown()

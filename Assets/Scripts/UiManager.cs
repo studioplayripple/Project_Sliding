@@ -73,17 +73,15 @@ public class UiManager : MonoBehaviour
         gameManager = gmmanager;
         TweenPanelStatus(upperHolder, false, 0);
         TweenPanelStatus(abilityHolder, false, 0);
-        gameOverObject.SetActive(false);
         TweenPanelStatus(gameOverHeading, false, 0);
         TweenPanelStatus(gameOverButtonRect, false, 0);
+        gameOverObject.SetActive(false);
         confettiEffect.SetActive(false);
         pointDrawnObj.SetActive(false);
-        foreach (Image im in pointDrawnBGEffects) 
+        foreach (Image im in pointDrawnBGEffects)
         {
             im.fillAmount = 0;
         }
-
-
     }
 
     private void TweenPanelStatus(TweenPanel tweenpanel,bool isFinal, float time)
@@ -123,9 +121,9 @@ public class UiManager : MonoBehaviour
         {
             for (int i = 0; i < index; i++)
             {
-                if (hearts.Length > index)
+                if (hearts.Length > i)
                 {
-                    hearts[index].gameObject.SetActive(true);
+                    hearts[i].gameObject.SetActive(true);
                 }
             }
         }
@@ -183,7 +181,20 @@ public class UiManager : MonoBehaviour
 
     private void RetryLevel()
     {
-        gameManager.LoadScene();
+        TweenPanelStatus(gameOverHeading, false, 0.3f);
+        TweenPanelStatus(gameOverButtonRect, false, 0.3f);
+        Invoke(nameof(DisableGameOverPanel), 0.3f);
+    }
+    private void DisableGameOverPanel()
+    {
+        gameOverObject.SetActive(false);
+        confettiEffect.SetActive(false);
+        pointDrawnObj.SetActive(false);
+        foreach (Image im in pointDrawnBGEffects)
+        {
+            im.fillAmount = 0;
+        }
+        gameManager.Restart();
     }
 
     private void NextLevel()

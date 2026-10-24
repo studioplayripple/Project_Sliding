@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         uiManager = UiManager.Instance;
         abilityManager = AbilityManager.Instance;
 
-        //PlayerPrefs.SetInt(ShapeData.LevelNumberPref, 4);
+        PlayerPrefs.SetInt(ShapeData.LevelNumberPref, 5);
         //PlayerPrefs.SetInt(ShapeData.CoinCountPref, 201);
         //PlayerPrefs.SetInt(ShapeData.TutorialCodePref, 5);
 
@@ -81,27 +81,9 @@ public class GameManager : MonoBehaviour
         int rand = Random.Range(0, shapeData.allBgSprites.Length);
         Sprite bgimage = shapeData.allBgSprites[rand];
         uiManager.SetUp(this, levelNumber, bgimage);
-        gameStatus = -1;
-        int count = leveldata.TargetData.Length;
-
-        totalGoal = new int[count];
-        currentGoal = new int[count];
-
-        for (int i = 0; i < count; i++)
-        {
-            int num = leveldata.TargetData[i].totalCount;
-            totalGoal[i] = num;
-        }
+        UiSetUp(leveldata);
 
         int maxShape = leveldata.maxShapeCount;
-
-
-        uiManager.GoalShow(currentGoal[0], totalGoal[0]);
-        currentLife = 3;
-        uiManager.LifeStatus(currentLife, true);
-
-        uiManager.CoinShow(totalCoin);
-
         List<ShapeCode> shapeCodes = new List<ShapeCode>();
         if (leveldata.TargetData.Length > 0)
         {
@@ -115,8 +97,28 @@ public class GameManager : MonoBehaviour
         {
             shapeSpawner.SpawnShapes(shapeCodes, leveldata.maxCoinSpawn, leveldata.maxPoints, leveldata.obstacleIndex, leveldata.ObstacleLevel);
         }
-        uiManager.UppderHolderStatus(true, 0.5f);
+        
 
+    }
+    private void UiSetUp(Leveldata leveldata)
+    {
+        gameStatus = -1;
+        int count = leveldata.TargetData.Length;
+        totalGoal = new int[count];
+        currentGoal = new int[count];
+
+        for (int i = 0; i < count; i++)
+        {
+            int num = leveldata.TargetData[i].totalCount;
+            totalGoal[i] = num;
+        }
+        uiManager.GoalShow(currentGoal[0], totalGoal[0]);
+        currentLife = 3;
+        uiManager.LifeStatus(currentLife, true);
+
+        uiManager.CoinShow(totalCoin);
+
+        uiManager.UppderHolderStatus(true, 0.5f);
     }
 
     public void UpdateGoal(ShapeCode code)
@@ -175,6 +177,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-
+    public void Restart()
+    {
+        Leveldata leveldata = shapeData.allLevelData[levelNumber];
+        UiSetUp(leveldata);
+        shapeSpawner.RestartLevel();
+    }
 
 }
